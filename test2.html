@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Up and Running with jQuery Mobile</title>
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome// 图标库 -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div data-role="page" id="alert" data-theme='b'>
+<div data-role="header" data-theme='b'>
+<h1>Confirmation</h1>
+</div>
+<div data-role="content" data-theme='b'>
+<h2>Are you sure you want to delete this book?</h2>
+<!-- This will be a normal page loading -->
+<a href="delete-yes.html" data-role="button">Yes, delete</a>
+<!-- This is just a close link -->
+<a href="delete.html" data-role="button" data-theme='b'>Cancel</a>
+</div>
+</div>
+</body>
+</html>

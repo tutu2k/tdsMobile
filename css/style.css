@@ -1,0 +1,152 @@
+/**************************
+*
+*	Tadashi Shoji Style Sheet/Simon
+*
+**************************/
+#iGallery {
+list-style: none;
+padding: 15px;
+margin: 0px
+}
+#iGallery li {
+list-style: none;
+padding: 10px;
+margin: 10px;
+border: none;
+float: left
+}
+/*Gallery css Begin*/
+#imageflippage {
+background-color: #000;
+margin: 0px;
+padding: 0px;
+border: none;
+height: 100%;
+width: 100%
+}
+#tadcontent {
+padding: 0px;
+margin: 0px;
+position: relative;
+background: #000;
+height: 100%;
+width: 100%;
+}
+#imageflipimg {
+vertical-align: middle;
+height: 100%;
+width: 100%;
+z-index: 98;
+background-position: center;
+background-size: contain;
+text-align: center;
+background-repeat: no-repeat
+}
+#imagefliper {
+width: 100%;
+top: 45px;
+bottom: 0px;
+position: absolute;
+z-index: 99
+}
+#tadnavi {
+position: fixed;
+top: 0px;
+z-index: 100;
+width: 100%;
+opacity: 0.7;
+display: none
+}
+#tadinfo {
+position: fixed;
+display: none;
+bottom: 0px;
+width: 100%;
+padding: 5px;
+background-color: #333333;
+opacity: 0.7;
+color: #FFFFFF;
+text-align: center;
+font-size: small;
+font-family: Verdana, Geneva, sans-serif
+}
+/*Gallery css over*/
+
+/*首页图片轮换控制图标 Start*/
+        /* jssor slider bullet navigator skin 21 css */
+        /*
+            .jssorb21 div           (normal)
+            .jssorb21 div:hover     (normal mouseover)
+            .jssorb21 .av           (active)
+            .jssorb21 .av:hover     (active mouseover)
+            .jssorb21 .dn           (mousedown)
+            */
+        .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
+            background: url(../img/b21.png) no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .jssorb21 div {
+            background-position: -5px -5px;
+        }
+
+            .jssorb21 div:hover, .jssorb21 .av:hover {
+                background-position: -35px -5px;
+            }
+
+        .jssorb21 .av {
+            background-position: -65px -5px;
+        }
+
+        .jssorb21 .dn, .jssorb21 .dn:hover {
+            background-position: -95px -5px;
+        }
+    </style>
+
+    <!-- Arrow Navigator Style -->
+    <style>
+        /* jssor slider arrow navigator skin 21 css */
+        /*
+            .jssora21l              (normal)
+            .jssora21r              (normal)
+            .jssora21l:hover        (normal mouseover)
+            .jssora21r:hover        (normal mouseover)
+            .jssora21ldn            (mousedown)
+            .jssora21rdn            (mousedown)
+            */
+        .jssora21l, .jssora21r, .jssora21ldn, .jssora21rdn {
+            position: absolute;
+            cursor: pointer;
+            display: block;
+            background: url(../img/a21.png) center center no-repeat;
+            overflow: hidden;
+        }
+
+        .jssora21l {
+            background-position: -3px -33px;
+        }
+
+        .jssora21r {
+            background-position: -63px -33px;
+        }
+
+        .jssora21l:hover {
+            background-position: -123px -33px;
+        }
+
+        .jssora21r:hover {
+            background-position: -183px -33px;
+        }
+
+        .jssora21ldn {
+            background-position: -243px -33px;
+        }
+
+        .jssora21rdn {
+            background-position: -303px -33px;
+        }
+   /*首页图片轮换控制图标 Over*/
+
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}

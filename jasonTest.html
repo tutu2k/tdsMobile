@@ -1,0 +1,28 @@
+function getRecentlyViewed()
+{
+var html = "";
+jQuery.ajax({
+type: "get",//使用get方法访问后台
+dataType: "json",//返回json格式的数据
+url: "http://www.tadashishoji.com.cn/getcontent/getpost.php?type=gallery&pid=7853",//要访问的后台地址
+//	 data: "skulist=" + skulist,//要发送的数据
+//	 complete: function(){}
+success: function(msg){//msg为返回的数据，在这里做数据绑定
+//	 alert(msg.isloggedin);
+jQuery(msg).each( function(i, n){
+html+= "<li class=\"item first\">";
+html+= "<a href=\""+n.url+" title=\""+n.name+"\" class=\"product-image\" target=\"_blank\">";
+html+= "<span class=\"pro-grid-img\"><img class=\"pro-grid-img\" src=\""+n.image+"\" width=\"145\" height=\"145\" alt=\""+n.name+"\" /></span><br>";
+html+= "<span class=\"pro-grid-txt\"><p class=\"product-name\">"+n.name+"</p>";
+html+= "商品编号："+n.sku+"<br />";
+html+= "<div class=\"price-box\">";
+html+= "<div class=\"Price1\">";
+html+= "<div class=\"price-box\">";
+html+= "<span class=\"price-label\">单价：</span>";
+html+= "<span>￥"+n.price+"</span>";
+html+= "</div></div></div></li>";
+});
+jQuery('#recentlyviewed-list').html(html);
+}
+});
+}

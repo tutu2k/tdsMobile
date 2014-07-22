@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery imageflip plugin Example</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+        <link rel="stylesheet" href="css/iconfont.css">
+		<link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+		<link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+		<link rel="stylesheet" href="css/jquerymobile.nativedroid.color.purple.css" id='jQMnDColor' />
+		<link rel="stylesheet" href="css/style.css" id='tdsStyle' />
+		
+		<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+		<script src="js/nativedroid.script.js"></script>
+
+
+</head>
+<body>
+<div data-role="page" id="home" data-theme="b" data-title="imageFlip Demo">
+<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+	<script src="jasonTest.js"></script>
+	<script src="js/imageflip.js"></script>
+	<script type="text/javascript">
+		getRecentlyViewed(7810);
+		</script>
+<h1>配饰</h1>
+<a href="#" data-role='button' data-inline='true' data-rel="back"><i class="icon iconfont">&#xe600;</i></a>
+</div>
+<div data-role="content" id="content" data-theme="b">
+<div class="insert">
+<ul id="iGallery">
+</ul>
+</div>
+</div>
+</div>
+
+</body>
+</html>

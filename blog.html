@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+	<head>
+		<meta charset="utf-8">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Tadashi Shoji中国网站</title>
+		<meta name="author" content="simon">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+        <link rel="stylesheet" href="css/iconfont.css">
+
+        
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.purple.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+   		<script src='js/jquery.easing.1.3.js'></script> 
+   		<script src="js/nativedroid.script.js"></script>
+	</head>
+
+	<body data-nativedroid-progress-animation='6'>
+	<div data-role="page" data-theme='b'>
+		<script src="js/blog.js"></script>
+		<script type="text/javascript">
+			getBlogList(43);
+		</script>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+			<a href="#" data-role='button' data-inline='true' data-rel="back"><i class="icon iconfont">&#xe600;</i></a>
+            <h2>媒体报道</h2>
+        </div>
+        <div data-role="content" style="padding-top:20px">  
+        	<div class="inset">
+        <ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b" id="blogView">
+            
+        </ul>
+        </div>
+        </div>
+        
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="true">
+            <p style="text-align:center">© 2014 TADASHI SHOJI 中国官网. All Rights Reserved.</p>
+            </div>
+    </div>
+    
+    
+    
+    <div data-role="page" id="detail" data-theme='b'>
+    	<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+			<a href="#" data-role='button' data-inline='true' data-rel="back"><i class="icon iconfont">&#xe600;</i></a>
+            <h2 id="detailTitle">媒体报道</h2>
+        </div>
+    	<div data-role="content" style="padding-top:20px">
+    		<div class="inset" id="blogDetail">
+    			
+    		</div>
+    	
+    	</div>
+    </div>
+	</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+	<head>
+		<meta charset="utf-8">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Tadashi Shoji中国网站</title>
+		<meta name="viewport" content="width=device-width">
+		
+		<!-- IconFont - Simon的图标库 -->
+        <link rel="stylesheet" href="css/iconfont.css">
+        <!-- camera图片轮换插件 -->
+        <link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'> 
+        
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.purple.css" id='jQMnDColor' />
+  
+		<!-- Tadashi shoji Css style -->
+        <link rel="stylesheet" href="css/style.css" id='tdsStyle' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+   		<script src='js/jquery.easing.1.3.js'></script> 
+    	<script src="js/nativedroid.script.js"></script>
+    	<script type="text/javascript" src="js/jssor.core.js"></script>
+		<script type="text/javascript" src="js/jssor.utils.js"></script>
+		<script type="text/javascript" src="js/jssor.slider.min.js"></script>
+		<script>
+        jQuery(document).ready(function ($) {
+
+            var _CaptionTransitions = [];
+            _CaptionTransitions["L"] = { $Duration: 900, $FlyDirection: 1, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $ScaleHorizontal: 0.6, $Opacity: 2 };
+            _CaptionTransitions["R"] = { $Duration: 900, $FlyDirection: 2, $Easing: { $Left: $JssorEasing$.$EaseInOutSine }, $ScaleHorizontal: 0.6, $Opacity: 2 };
+            _CaptionTransitions["T"] = { $Duration: 900, $FlyDirection: 4, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $ScaleVertical: 0.6, $Opacity: 2 };
+            _CaptionTransitions["B"] = { $Duration: 900, $FlyDirection: 8, $Easing: { $Top: $JssorEasing$.$EaseInOutSine }, $ScaleVertical: 0.6, $Opacity: 2 };
+            _CaptionTransitions["ZMF|10"] = { $Duration: 900, $Zoom: 11, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear }, $Opacity: 2 };
+            _CaptionTransitions["RTT|10"] = { $Duration: 900, $Zoom: 11, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseOutQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInExpo }, $Opacity: 2, $Round: { $Rotate: 0.8} };
+            _CaptionTransitions["RTT|2"] = { $Duration: 900, $Zoom: 3, $Rotate: 1, $Easing: { $Zoom: $JssorEasing$.$EaseInQuad, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInQuad }, $Opacity: 2, $Round: { $Rotate: 0.5} };
+            _CaptionTransitions["RTTL|BR"] = { $Duration: 900, $Zoom: 11, $Rotate: 1, $FlyDirection: 10, $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Zoom: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseLinear, $Rotate: $JssorEasing$.$EaseInCubic }, $ScaleHorizontal: 0.6, $ScaleVertical: 0.6, $Opacity: 2, $Round: { $Rotate: 0.8} };
+            _CaptionTransitions["CLIP|LR"] = { $Duration: 900, $Clip: 15, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic }, $Opacity: 2 };
+            _CaptionTransitions["MCLIP|L"] = { $Duration: 900, $Clip: 1, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+            _CaptionTransitions["MCLIP|R"] = { $Duration: 900, $Clip: 2, $Move: true, $Easing: { $Clip: $JssorEasing$.$EaseInOutCubic} };
+
+            var options = {
+                $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideEasing: $JssorEasing$.$EaseOutQuint,          //[Optional] Specifies easing for right to left animation, default value is $JssorEasing$.$EaseOutQuad
+                $SlideDuration: 1200,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $CaptionSliderOptions: {                            //[Optional] Options which specifies how to animate caption
+                    $Class: $JssorCaptionSlider$,                   //[Required] Class to create instance to animate caption
+                    $CaptionTransitions: _CaptionTransitions,       //[Required] An array of caption transitions to play caption, see caption transition section at jssor slideshow transition builder
+                    $PlayInMode: 1,                                 //[Optional] 0 None (no play), 1 Chain (goes after main slide), 3 Chain Flatten (goes after main slide and flatten all caption animations), default value is 1
+                    $PlayOutMode: 3                                 //[Optional] 0 None (no play), 1 Chain (goes before main slide), 3 Chain Flatten (goes before main slide and flatten all caption animations), default value is 1
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 8,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {                       //[Optional] Options to specify and enable arrow navigator or not
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 1,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 2,                                 //[Optional] Auto center arrows in parent container, 0 No, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var bodyWidth = document.body.clientWidth;
+                if (bodyWidth)
+                    jssor_slider1.$SetScaleWidth(Math.min(bodyWidth, 1920));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+
+	</head>
+
+	<body data-nativedroid-progress-animation='6'>
+
+	<div data-role="page"	 id="mainPage">
+	<div data-role="panel" data-display="push" id="leftNav" data-theme="b" style="background-color: #000000">
+	  <ul data-role="listview">
+            <li data-icon="false"><a href="#" data-rel="close"><i class="icon iconfont">&#xe600;</i>首页</a></li>
+            <li data-icon="false"><a href="#"><i class="icon iconfont">&#xe604;</i>服装系列</a></li>
+            <li data-icon="false"><a href="imgView1.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe60d;</i>2015早春Resort</a></li>
+            <li data-icon="false"><a href="imgView2.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe60d;</i>2014秋冬Collection</a></li>
+            <li data-icon="false"><a href="imgView3.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe60d;</i>2014秋冬Rumway</a></li>
+            <li data-icon="false"><a href="imgView4.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe60d;</i>2014春夏Collection</a></li>
+            <li data-icon="false"><a href="imgView5.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe60d;</i>结婚礼服</a></li>
+            <li data-icon="false"><a href="imgView6.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe60d;</i>配饰</a></li>
+            <li data-icon="false"><a href="blog.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe610;</i>媒体报道</a></li>
+            <li data-icon="false"><a href="blog2.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe613;</i>红毯名人</a></li>
+            <li data-icon="false"><a href="blog3.html" data-transition="slide" rel='external'><i class="icon iconfont">&#xe602;</i>时尚搭配推荐</a></li>
+            <li data-icon="false"><a href="about.html" data-transition="slide"><i class="icon iconfont">&#xe60f;</i>公司介绍</a></li>
+            <li data-icon="false"><a href="designer.html" data-transition="slide"><i class="icon iconfont">&#xe614;</i>设计师简介</a></li>
+            <li data-icon="false"><a href="contact.html" data-transition="slide"><i class="icon iconfont">&#xe612;</i>联系我们</a></li>
+                        
+		</ul>
+    </div>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="#leftNav" data-role='button' data-inline='true'><i class="icon iconfont">&#xe60c;</i></a>
+          <h1>TADASHI SHOJI 中国</h1>
+        </div>
+        
+        <div data-role="content" data-theme='b'>
+        	<div id="slider1_container" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1100px; height: 594px; overflow: hidden;">
+        		<!-- Loading Screen -->
+        		<div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+        	    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;top: 0px; left: 0px; width: 100%; height: 100%;">
+           		 </div>
+            <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;top: 0px; left: 0px; width: 100%; height: 100%;">
+            </div>
+        </div>
+        <!-- Slides Container -->
+        <div data-u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1100px;height: 594px; overflow: hidden;">
+            <div>
+                <img data-u="image" src="images/banner.jpg" alt="" />
+                <div style="position: absolute; width: 480px; height: 120px; top: 120px; left: 30px; padding: 5px;
+                    text-align: left; line-height: 60px; text-transform: uppercase; font-size: 40px;
+                        color: #FFFFFF;">Runway 2014 FW
+                </div>
+                <div style="position: absolute; width: 480px; height: 120px; top: 300px; left: 30px; padding: 5px;
+                    text-align: left; line-height: 36px; font-size: 30px;
+                        color: #FFFFFF;">
+                        TADASHI SHOJI 2014纽约秋冬发布会之夜晚摩尔人的宫殿
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="images/bannerB.jpg" alt="" />
+            </div>
+            <div>
+                <img data-u="image" src="images/bannerc.jpg" alt="" />
+            </div>
+        </div>
+                
+        <!-- Bullet Navigator Skin Begin -->
+        <!-- bullet navigator container -->
+        <div data-u="navigator" class="jssorb21" style="position: absolute; bottom: 26px; left: 6px;">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="POSITION: absolute; WIDTH: 19px; HEIGHT: 19px; text-align:center; line-height:19px; color:White; font-size:12px;"></div>
+        </div>
+        <!-- Bullet Navigator Skin End -->
+
+        <!-- Arrow Navigator Skin Begin -->
+        <!-- Arrow Left -->
+        <span data-u="arrowleft" class="jssora21l" style="width: 55px; height: 55px; top: 123px; left: 8px;">
+        </span>
+        <!-- Arrow Right -->
+        <span data-u="arrowright" class="jssora21r" style="width: 55px; height: 55px; top: 123px; right: 8px">
+        </span>
+        <!-- Arrow Navigator Skin End -->
+        <a style="display: none" href="http://www.jssor.com">javascript slider</a>
+    </div>
+        	
+        	
+           <p><img src="images/banner2.jpg" style="width: 100%; height: auto"/></p>
+            <p><img src="images/banner3.jpg" style="width: 100%; height: auto"/></p>       
+        </div>
+        
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="true" >
+            <p style="text-align: center">© 2014 TADASHI SHOJI 中国官网. All Rights Reserved.
+            </p>
+            </div>
+          </div>
+          
+<div data-role="page" id="BJ">
+<!--引用百度地图API-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+  <!--百度地图容器-->
+  <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+	<a href="#" data-role='button' data-inline='true' data-rel="back"><i class="icon iconfont">&#xe600;</i></a>
+    <h2>北京芳草地旗舰店</h2>
+        </div>
+    	<div data-role="content" style="padding-top:20px">
+    		<div class="inset">
+    			<div style="width:100%;height:600px; border:#ccc solid 1px;" id="dituContent">
+    				
+    				
+    			</div>
+    			
+    		</div>
+    	
+    	</div>
+    	<script type="text/javascript" src="js/BJ.js"></script>
+	
+</div>
+
+<div data-role="page" id="SH">
+<!--引用百度地图API-->
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+  <!--百度地图容器-->
+  <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+	<a href="#" data-role='button' data-inline='true' data-rel="back"><i class="icon iconfont">&#xe600;</i></a>
+    <h2>上海愚园路店</h2>
+        </div>
+    	<div data-role="content" style="padding-top:20px">
+    		<div class="inset">
+    			<div style="width:100%;height:600px; border:#ccc solid 1px;" id="dituContent2">   				   				
+    			</div>   			
+    		</div>
+    	</div>
+    	<script type="text/javascript" src="js/SH.js"></script>
+	
+</div>
+	</body>
+</html>

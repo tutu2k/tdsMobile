@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+	<head>
+		<meta charset="utf-8">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Tadashi Shoji中国网站</title>
+		<meta name="author" content="simon">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome// 图标库 -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <!-- camera图片轮换插件 -->
+        <link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'> 
+        
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.light.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.purple.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+   		<script src='js/jquery.easing.1.3.js'></script> 
+    	<script  src='js/camera.min.js'></script> 
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_1').camera({
+				thumbnails: false,
+				pagination: true,
+				
+			});
+		});
+	</script>
+	</head>
+
+	<body>
+        
+    <div data-role="page" data-theme='b'>
+    	<div data-role="panel" data-display="push" id="rightNav" data-position="right" data-theme="b" style="background-color: #000000">
+			<ul data-role="listview">
+            	<li data-icon="false"><a href="#" data-rel="close">关闭侧栏</a></li>
+                <li data-icon='false'><a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">我的购物车</a></li>
+                <li data-icon='false'><a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">我的收藏</a></li>
+                <li data-icon='false'><a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">个人信息</a></li>
+                <li data-icon='false'><a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">我的订单</a></li>
+                <li data-icon='false'><a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">我的收货信息</a></li>
+                <li data-icon='false'><a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop">我的积分</a></li>
+			</ul>
+    	</div>
+
+	<div data-role="panel" data-display="push" id="leftNav" data-theme="b" style="background-color: #000000">
+	<ul data-role="listview">
+            <li data-icon="false"><a href="#" data-rel="close"><i class="fa fa-home"></i>首页</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-codepen"></i>服装系列</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-codepen"></i>2015早春Resort</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-openid"></i>2014秋冬Collection</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-bullhorn"></i>2014秋冬Rumway</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-thumbs-o-up"></i>2014春夏Collection</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-book"></i>媒体报道</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-pencil-square-o"></i>红毯名人</a></li>
+            <li data-icon="false"><a href="#"><i class="fa fa-female"></i>时尚搭配推荐</a></li>
+                        
+		</ul>
+    </div>
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="#leftNav" data-role='button' data-inline='true'><i class='fa fa-bars'></i></a>
+            <a href="#rightNav" data-role='button' data-inline='true'><i class='fa fa-user'></i></a>
+            <h1>Tadashi Shoji在线商城</h1>
+        </div>
+        
+        <div data-role="content" data-theme='b'>
+          <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+            <div data-thumb="images/slides/thumbs/bridge.jpg" data-src="images/001.png">
+            </div>
+            <div data-thumb="images/slides/thumbs/leaf.jpg" data-src="images/002.png">
+
+            </div>
+            <div data-thumb="images/slides/thumbs/road.jpg" data-src="images/003.png">
+                <div class="camera_caption fadeFromBottom">
+                   现货秒杀中现货秒杀中现货秒杀中现货秒杀中现货秒杀中现货秒杀中现货秒杀中
+                </div>
+            </div>
+            <div data-thumb="images/slides/thumbs/sea.jpg" data-src="images/004.png">
+               
+            </div>
+
+
+        </div><!-- #camera_wrap_1 -->	
+                
+        <div class='inset'>
+
+            <div data-role="popup" id="popupDialog" data-theme="b">
+            
+                <div data-role="header" data-theme="b">
+                    <h1>我的购物车</h1>
+                </div>
+        
+                <div data-role="content" data-theme="b">
+                    <p>购物车内暂时没有商品，请您去首页挑选喜欢的商品吧!!!</p>
+		            <div class='showastabs center nobg'>
+		                    <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true"><i class='lIcon fa fa-check'></i>确定</a>
+		                    <a href="dialog/index.html" data-rel="back" data-role="button" data-inline="true"><i class='lIcon fa fa-times'></i>取消</a>
+		            </div>
+                    
+                </div>
+
+        </div>
+
+        </div>  
+	        
+        </div>
+        
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false" >
+            页面底部区域
+            </div>
+    </div>
+	</body>
+</html>

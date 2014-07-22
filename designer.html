@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+	<head>
+		<meta charset="utf-8">
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Tadashi Shoji中国网站</title>
+		<meta name="author" content="simon">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome// 图标库 -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <!-- camera图片轮换插件 -->
+        <link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'> 
+        
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.light.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.purple.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+   		<script src='js/jquery.easing.1.3.js'></script> 
+    	<script  src='js/camera.min.js'></script> 
+    	<script src="js/nativedroid.script.js"></script>
+    <script>
+		jQuery(function(){
+			
+			jQuery('#camera_wrap_1').camera({
+				thumbnails: false,
+				pagination: true,
+				
+			});
+		});
+	</script>
+	</head>
+
+	<body data-nativedroid-progress-animation='6'>
+	<div data-role="page" data-theme='b'>
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+         	<a href="#" data-role='button' data-inline='true' data-rel="back"><i class="icon iconfont">&#xe600;</i></a>
+            <h2>设计师介绍</h2>
+        </div>
+        
+        <div data-role="content" data-theme='b'>
+
+           <p style="text-align: center"><img src="http://www.tadashishoji.com.cn/wp-content/uploads/2013/11/Tadashipic-336x336.jpg" style="width: 60%; height: auto"/></p>
+		<div class='inset'>
+			
+			<p style="line-height: 1.6em">SHOJI TADASHI（庄司正）是塔达希时装公司的创始人兼首席设计师。庄司正先生出生于日本仙台，幼年即喜爱绘画，后移居东京，学习美术专业。其艺术才华很快得到承认，被推荐给日本当代艺术的领军人物、二十世纪六十年代日本现代艺术运动的推手高松次郎（Jiro Takamatsu），在其工作室实习。
+
+在此期间，庄司正先生开始被美国及其在现代艺术中的地位所吸引。他于是移居美国，就读于洛杉矶的高等学府，从这里迸发了对时装艺术不可遏止的热情，开始了其艺术发展生涯。</p>
+
+<p style="line-height: 1.6em">大学就学期间，庄司正先生获得难得机会与著名时装设计师Bill Whitten共事。上世纪七十年代是追求浮华艳丽的时代，顶尖艺术家都以得到一件Whitten原创作品为荣。庄司正先生得以为Elton John、Steve Wonder、Neil Diamond、Michael Jackson兄妹以及Earth, Wind 和Fire乐队等顶级艺术家设计时装。
+</p>
+<p style="line-height: 1.6em">获得时装设计学位后，庄司正先生开始在知名服装公司工作并经过数年努力屡获升迁。看到当时市场上为女士参加社交活动设计的服装品种有限，庄司正先生抓住商机，开始创立自己的事业。
+			</p>
+
+
+		</div>
+
+        </div>
+        
+            <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="true" >
+            <p style="text-align: center">© 2014 TADASHI SHOJI 中国官网. All Rights Reserved.
+            </p>
+            </div>
+    </div>
+	</body>
+</html>
